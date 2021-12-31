@@ -28,14 +28,19 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     // Function for clean up and code re-use:
-    // the code for enabling/disabling the recording and stop buttons, and setting the recording label text, is called in multiple places? These three lines of code are always called one after the other when the app state changes from passive to recording. Let's group this code into a function so that we can toggle the UI with a single-line function call.
     
-    // The 3 lines of code being called multiple places are:
+    // This code is for enabling/disabling the recording and stop button(s), and also for setting the recording label text.
+    
+    // These three lines of code are always called one after the other when the app state changes from passive to recording. 
+    
+    // This code will be grouped into a function so that we can toggle the UI with a single-line function call.
+    
+    // The 3 lines of code being called in multiple places are:
     // 1. recordingLabel.text = ""
     // 2. stopRecordingButton.isEnabled = bool
     // 3. recordButton.isEnabled = bool
    
-// The function below is from the Udacity Knowledge Forum:
+// Function below commented out
     
   // func configureUI(_ isRecording:Bool = false) {
     //   recordingLabel.text = isRecording ? "Recording in progress": "Tap to Record"
